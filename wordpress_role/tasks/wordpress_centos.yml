@@ -1,0 +1,15 @@
+---
+#Install pré-requisites for wordpress
+- name: Install pre-requisites for wordpress
+  yum:
+     name: ['php','php-common','php-mysql','php-gd','php-xml','php-mbstring','php-mcrypt']
+     state: present
+  
+#Install Wordpress
+- name: Extract Wordpress latest.tar.gz
+  unarchive:
+      src: http://wordpress.org/latest.tar.gz
+      dest: /var/www/html
+      remote_src: yes
+  notify: restart nginx
+      

@@ -1,0 +1,7 @@
+---
+# tasks file for nginx_role
+- name: Install nginx in CentOS 7
+  import_tasks: nginx_centos.yml
+  when: ansible_os_family == "RedHat"
+  become: yes
+

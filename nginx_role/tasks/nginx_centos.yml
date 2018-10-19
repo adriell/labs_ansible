@@ -1,0 +1,17 @@
+---
+# tasks file for nginx_role
+- name: Install pré-requisites
+  yum:
+    name: ['epel-release','vim','wget','git']
+    state: present
+
+- name: Install package nginx
+  yum:
+    name: nginx
+    state: present
+
+- name: Start nginx
+  service:
+     name: nginx
+     state: started
+     enabled: yes

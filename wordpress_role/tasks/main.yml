@@ -1,0 +1,6 @@
+---
+# tasks file for wordpress_role
+- name: Install wordpress for CentOS 7
+  import_tasks: wordpress_centos.yml
+  when: ansible_os_family == "RedHat"
+  become: yes

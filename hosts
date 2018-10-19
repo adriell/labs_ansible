@@ -1,0 +1,3 @@
+[ansible-labs]
+#ansible_host=centos@100.24.113.155 ansible_user=centos ansible_ssh_private_key_file=ansible-key-pair.pem
+35.170.53.131
