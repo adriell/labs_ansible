@@ -1,0 +1,14 @@
+---
+
+- name: Repo MariaDB
+  yum_repository:
+      name: MariaDB
+      description: Repo MariaDB
+      baseurl: http://yum.mariadb.org/{{ mariadb_version }}/rhel7-amd64
+      gpgkey: https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+      gpgcheck: 1
+
+- name: Install packages
+  yum:
+      name: "{{ mariadb_packages }}"
+      state: present

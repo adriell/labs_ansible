@@ -1,5 +1,6 @@
 ---
 - name: Install wordpress 
   hosts: ansible-labs
+  become: yes
   roles:
     - wordpress_role

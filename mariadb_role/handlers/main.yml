@@ -1,2 +1,5 @@
 ---
 # handlers file for mariadb_role
+- name: restart mariadb
+  service:
+     name: '{{ mariadb_service }}'

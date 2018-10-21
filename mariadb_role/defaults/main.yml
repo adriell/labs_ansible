@@ -1,2 +1,4 @@
 ---
 # defaults file for mariadb_role
+mariadb_version: '10.3'
+mariadb_service: 'mariadb'

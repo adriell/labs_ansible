@@ -1,0 +1,6 @@
+---
+# vars file for mariadb_role
+
+mariadb_packages: 
+  - MariaDB-server
+  - MariaDB-client
