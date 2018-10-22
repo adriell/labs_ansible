@@ -1,0 +1,8 @@
+---
+- name: Update password user root
+  mysql_user:
+     name: root
+     host:
+       - "{{ ansible_hostmame }}"
+       - 127.0.0.1
+       - localhost

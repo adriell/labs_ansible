@@ -12,3 +12,8 @@
   vars:
     variable: value
   become: yes
+
+- include_tasks: database.yml
+  vars:
+    variable: value
+  become: yes
