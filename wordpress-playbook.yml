@@ -1,6 +1,13 @@
 ---
-- name: Install wordpress 
+- name: Playbook for install wordpress 
   hosts: ansible-labs
   become: yes
+  vars:
+    db_user: "adriel"
+    db_name: "wordpressdb"
+    db_password: "123456789"
+    login_user: "root"
+    login_password: "123456789"
   roles:
     - wordpress_role
+    - mariadb_role

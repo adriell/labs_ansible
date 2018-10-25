@@ -2,7 +2,27 @@
 - name: Update password user root
   mysql_user:
      name: root
-     host:
-       - "{{ ansible_hostmame }}"
-       - 127.0.0.1
-       - localhost
+     password: "{{ mariadb_password_root }}"
+     login_user: root
+     login_password: "{{ mariadb_password_root }}"
+     login_host: "localhost"
+
+- name: Create a new database with name "{{ db_name }}"
+  mysql_db:
+     name: "{{ db_name }}"
+     state: present
+     login_user: root
+     login_password: "{{ mariadb_password_root }}"
+     login_host: "localhost"
+  
+- name: Add another user mariadb
+  mysql_user:
+      name: "{{ db_user }}"
+      password: "{{ db_password }}"
+      host: "{{ db_host }}"
+      priv: "{{ db_name }}.*:{{ db_priv }}"
+      state: present
+      login_user: root
+      login_password: "{{ mariadb_password_root }}"
+      login_host: "localhost"
+         

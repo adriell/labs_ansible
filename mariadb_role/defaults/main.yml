@@ -2,3 +2,8 @@
 # defaults file for mariadb_role
 mariadb_version: '10.3'
 mariadb_service: 'mariadb'
+db_user: 'mariadb'
+db_password: '123456789'
+db_name: 'rivendel'
+db_host: 'localhost'
+db_priv: 'ALL'

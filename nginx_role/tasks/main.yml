@@ -5,3 +5,7 @@
   when: ansible_os_family == "RedHat"
   become: yes
 
+- name: Configure vhost nginx
+  import_tasks: config_vhost.yml
+  become: yes
+

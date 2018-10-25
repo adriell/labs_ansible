@@ -4,3 +4,12 @@
 mariadb_packages: 
   - MariaDB-server
   - MariaDB-client
+  - MySQL-python
+
+mariadb_password_root: "123456789"
+
+db_user: 'mariadb'
+db_password: '123456789'
+db_name: 'rivendel'
+db_host: 'localhost'
+db_priv: 'ALL'

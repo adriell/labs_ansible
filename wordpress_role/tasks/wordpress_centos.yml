@@ -1,15 +1,47 @@
 ---
 #Install pré-requisites for wordpress
+- name: Install pre-requisites for php 7
+  yum:
+     name: http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+     enablerepo: remi-php72
+     state: present
+  notify: yum-clean-metadata
+
+- name: yum-clean-metadata
+  command: yum clean metadata
+  args: 
+    warn: no
+
 - name: Install pre-requisites for wordpress
   yum:
-     name: ['php','php-common','php-mysql','php-gd','php-xml','php-mbstring','php-mcrypt']
+     name: [ 'epel-release','yum-utils','php','php-common','php-mysql','php-gd','php-xml','php-mbstring','php-mcrypt','php-fpm']
      state: present
+
+- name: Start php-fpm
+  service:
+      name: php-fpm
+      state: started
+      enabled: yes
+
+
   
 #Install Wordpress
 - name: Extract Wordpress latest.tar.gz
   unarchive:
       src: http://wordpress.org/latest.tar.gz
       dest: /var/www/html
+      owner: nginx
+      mode: 0755
       remote_src: yes
   notify: restart nginx
+
+- name: Configure vhost wordpress
+  template:
+     src: "templates/wp-config.php.j2"
+     dest: "/var/www/html/wordpress/wp-config.php"
+  remote_src: yes
+  notify:
+     restart nginx
+   
+    
       

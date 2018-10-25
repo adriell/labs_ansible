@@ -1,0 +1,7 @@
+- name: Configure vhost wordpress
+  template:
+     src: "templates/wordpress.conf.j2"
+     dest: "/etc/nginx/conf.d/wordpress.conf"
+  remote_src: yes
+  notify:
+     restart nginx
