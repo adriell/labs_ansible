@@ -4,16 +4,8 @@
    file: "{{ ansible_os_family }}.yml"
 
 
-- include_tasks: install.yml
-  vars:
-    variable: value
-  become: yes
-- include_tasks: config.yml
-  vars:
-    variable: value
-  become: yes
-
-- include_tasks: database.yml
-  vars:
-    variable: value
-  become: yes
+- import_tasks: install.yml
+ 
+- import_tasks: config.yml
+  
+- import_tasks: database.yml

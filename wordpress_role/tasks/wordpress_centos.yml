@@ -39,7 +39,8 @@
   template:
      src: "templates/wp-config.php.j2"
      dest: "/var/www/html/wordpress/wp-config.php"
-  remote_src: yes
+     owner: nginx
+     mode: 0755
   notify:
      restart nginx
    
