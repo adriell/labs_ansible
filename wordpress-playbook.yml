@@ -1,6 +1,5 @@
 ---
 - name: Playbook for install wordpress 
-  hosts: ansible-labs
   become: yes
   vars:
         db_user: adriel
