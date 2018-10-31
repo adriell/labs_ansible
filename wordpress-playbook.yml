@@ -1,6 +1,6 @@
 ---
 - name: Playbook for install wordpress 
-  hosts: all
+  hosts: web_hosts
   become: yes
   vars:
         db_user: adriel
