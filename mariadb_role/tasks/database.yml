@@ -4,7 +4,7 @@
 - name: Update password user root
   mysql_user:
      name: root
-     password: "{{ mariadb_password_root }}"
+     password: "{{ mariadb_password_root | mandatory }}"
      host: "localhost"
      state: present
  # when: /root/.my.cnf is not exists
