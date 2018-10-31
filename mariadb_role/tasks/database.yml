@@ -1,16 +1,18 @@
 ---
-- name: Create .my.cnf
-  template:
-   src: "client.my.cnf.j2"
-   dest: "/root/.my.cnf"
-   owner: root
-   group: root
-   mode: 0600
+
 
 - name: Update password user root
   mysql_user:
      name: root
      password: "{{ mariadb_password_root }}"
+
+#- name: Create .my.cnf
+#  template:
+#   src: "client.my.cnf.j2"
+#   dest: "/root/.my.cnf"
+#   owner: root
+#   group: root
+#   mode: 0600
 
 
 - name: Create a new database with name "{{ db_name }}"
