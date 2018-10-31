@@ -64,13 +64,6 @@
      owner: nginx
      mode: 0755
      state: file
-  
-  
-
-- name: "Desativacao do virtual host default no nginx"
-      file: path=/etc/nginx/sites-enabled/default state=absent
-      notify: "restart nginx"
- 
    
     
       
