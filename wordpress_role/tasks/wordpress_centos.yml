@@ -3,7 +3,7 @@
 - name: Install pre-requisites for php 7
   yum:
      name: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
-     enablerepo: remi-php72
+     #enablerepo: remi-php72
      state: present
   notify: yum-clean-metadata
 
@@ -43,6 +43,34 @@
      mode: 0755
   notify:
      restart nginx
+
+- name: Configurar diretorio de log
+  file:
+     path: "/var/log/wordpress/"
+     owner: nginx
+     mode: 0755
+     state: directory
+
+- name: Configurar o log access.log
+  file:
+     path: "/var/log/wordpress/access.log"
+     owner: nginx
+     mode: 0755
+     state: file
+
+- name: Configurar o log error.log
+  file:
+     path: "/var/log/wordpress/error.log"
+     owner: nginx
+     mode: 0755
+     state: file
+  
+  
+
+- name: "Desativacao do virtual host default no nginx"
+      file: path=/etc/nginx/sites-enabled/default state=absent
+      notify: "restart nginx"
+ 
    
     
       
