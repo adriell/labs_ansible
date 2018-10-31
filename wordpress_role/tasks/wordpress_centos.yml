@@ -2,7 +2,7 @@
 #Install pré-requisites for wordpress
 - name: Install pre-requisites for php 7
   yum:
-     name: http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+     name: "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
      enablerepo: remi-php72
      state: present
   notify: yum-clean-metadata
