@@ -47,23 +47,24 @@
 - name: Configurar diretorio de log
   file:
      path: "/var/log/wordpress/"
-     owner: nginx
+     owner: root
      mode: 0755
      state: directory
 
 - name: Configurar o log access.log
   file:
      path: "/var/log/wordpress/access.log"
-     owner: nginx
+     owner: root
      mode: 0755
      state: file
 
 - name: Configurar o log error.log
   file:
      path: "/var/log/wordpress/error.log"
-     owner: nginx
+     owner: root
      mode: 0755
      state: file
+
    
     
       
