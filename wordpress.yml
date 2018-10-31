@@ -1,0 +1,15 @@
+---
+- name: Playbook for install wordpress 
+  become: yes
+  host: all
+  vars:
+        db_user: adriel
+        db_name: wordpressdb
+        db_password: 123456789
+        login_user: root
+        login_password: 123456789
+  
+
+  roles:
+    - role: wordpress_role
+      
