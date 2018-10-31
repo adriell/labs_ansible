@@ -4,18 +4,19 @@
 - name: Update password user root
   mysql_user:
      name: root
-     password: "{{ mariadb_password_root | mandatory }}"
+     password: "{{ mariadb_password_root }}"
      host: "localhost"
      state: present
+     when:  mariadb_password_root  == ''
  # when: /root/.my.cnf is not exists
 
-#- name: Create .my.cnf
-#  template:
-#   src: "client.my.cnf.j2"
-#   dest: "/root/.my.cnf"
-#   owner: root
-#   group: root
-#   mode: 0600
+- name: Create .my.cnf
+  template:
+   src: "client.my.cnf.j2"
+   dest: "/root/.my.cnf"
+   owner: root
+   group: root
+   mode: 0600
 
 
 - name: Create a new database with name "{{ db_name }}"
