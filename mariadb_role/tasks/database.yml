@@ -5,10 +5,8 @@
   mysql_user:
      name: root
      password: "{{ mariadb_password_root }}"
-     host: "localhost"
+     check_implicit_admin: yes
      state: present
-     when:  mariadb_password_root  == ''
- # when: /root/.my.cnf is not exists
 
 - name: Create .my.cnf
   template:
