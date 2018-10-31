@@ -6,7 +6,7 @@
      name: root
      password: "{{ mariadb_password_root }}"
      state: present
-  when: config_file="/root/.my.cnf" is not defined
+  when: /root/.my.cnf is not exists
 
 - name: Create .my.cnf
   template:
