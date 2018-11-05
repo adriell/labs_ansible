@@ -1,3 +1,10 @@
+- name: Config nginx.conf
+  template:
+    src: "templates/nginx.conf.j2"
+    dest: "/etc/nginx/nginx.conf"
+  notify:
+    restart nginx
+
 - name: Directory conf.d
   file:
     path: /etc/nginx/conf.d/
