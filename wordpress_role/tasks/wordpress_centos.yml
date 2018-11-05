@@ -44,7 +44,7 @@
   notify:
      restart nginx
 
-- name: Configurar diretorio de log
+- name: Criar diretorio de log
   file:
      path: "/var/log/wordpress/"
      owner: root
@@ -52,14 +52,14 @@
      state: directory
   
 
-- name: Configurar o log access.log
+- name: Criar o log access.log
   file:
      path: "/var/log/wordpress/access.log"
      owner: root
      mode: 0755
-     state: file
+     state: touch
 
-- name: Configurar o log error.log
+- name: Criar o log error.log
   file:
      path: "/var/log/wordpress/error.log"
      owner: root
