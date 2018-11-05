@@ -46,13 +46,6 @@ server {
         rewrite ^/[_0-9a-zA-Z-]+(/.*\.php)$ $1 last;
     }
 
-    #location ~ .php$ {
-    #    try_files $uri =404;
-    #    fastcgi_pass    127.0.0.1:9000;
-    #    fastcgi_index   index.php;
-    #    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    #    include fastcgi_params;
-    #}
     location ~* \.php$ {
         fastcgi_index   index.php;
         fastcgi_pass    127.0.0.1:9000;
