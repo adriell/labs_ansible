@@ -5,7 +5,7 @@
      password: "{{ mariadb_password_root }}"
      check_implicit_admin: yes
      state: present
-     ignore_errors: true
+  ignore_errors: true
 
 - name: Create .my.cnf
   template:
