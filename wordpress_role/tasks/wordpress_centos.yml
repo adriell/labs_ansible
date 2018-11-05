@@ -42,29 +42,3 @@
      mode: 0755
   notify:
      restart nginx
-
-- name: Criar diretorio de log
-  file:
-     path: "/var/log/wordpress/"
-     owner: nginx
-     mode: 0755
-     state: directory
-  
-
-- name: Criar o log access.log
-  file:
-     path: "/var/log/wordpress/access.log"
-     owner: nginx
-     mode: 0755
-     state: touch
-
-- name: Criar o log error.log
-  file:
-     path: "/var/log/wordpress/error.log"
-     owner: nginx
-     mode: 0755
-     state: touch
-
-   
-    
-      
