@@ -64,7 +64,7 @@
      path: "/var/log/wordpress/error.log"
      owner: root
      mode: 0755
-     state: file
+     state: touch
 
    
     
