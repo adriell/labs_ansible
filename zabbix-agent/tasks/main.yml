@@ -1,0 +1,6 @@
+---
+# tasks file for zabbix-agent
+- name: Install zabbix-agnet for CentOS 7
+  import_tasks: zabbix-agent_centos.yml
+  when: ansible_os_family == "RedHat"
+  become: yes

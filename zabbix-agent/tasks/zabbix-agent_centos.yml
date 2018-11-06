@@ -1,0 +1,22 @@
+#Install pré-requisites for wordpress
+- name: Install repo zabbix-agent
+  yum:
+     name: "rpm -Uvh http://repo.zabbix.com/zabbix/{{ zabbix_base_version }}/rhel/7/x86_64/zabbix-release-{{ zabbix_agent_version }}.el7.noarch.rpm"
+     state: present
+  tags:
+     - zabbix-agent
+
+- name: Install zabbix-agent
+  yum:
+     name: ['zabbix','zabbix-agent']
+     state: present
+  tags:
+     - zabbix-agent
+
+- name: Configure zabbix-agent
+  template:
+     src: "templates/zabbix-agent_centos.conf.j2"
+     dest: "/etc/zabbix/zabbix-agentd.conf"
+  tags:
+    - zabbix-agent
+
