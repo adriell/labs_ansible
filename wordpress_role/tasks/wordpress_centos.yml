@@ -41,4 +41,4 @@
      owner: nginx
      mode: 0755
   notify:
-     restart nginx
+     restart nginx  
