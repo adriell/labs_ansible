@@ -12,6 +12,4 @@
   
 
   roles:
-    - wordpress_role
-    - zabbix-agent
-      
+    - wordpress_role      
