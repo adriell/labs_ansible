@@ -1,7 +1,7 @@
 #Install pré-requisites for wordpress
 - name: Install repo zabbix-agent
   yum:
-     name: "rpm -Uvh http://repo.zabbix.com/zabbix/{{ zabbix_base_version }}/rhel/7/x86_64/zabbix-release-{{ zabbix_agent_version }}.el7.noarch.rpm"
+     name: "http://repo.zabbix.com/zabbix/{{ zabbix_base_version }}/rhel/7/x86_64/zabbix-release-{{ zabbix_agent_version }}.el7.noarch.rpm"
      state: present
   tags:
      - zabbix-agent

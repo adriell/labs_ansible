@@ -2,6 +2,7 @@
 - name: Playbook for install wordpress 
   hosts: tag_Role_wordpress
   become: yes
+  
   roles:
     - zabbix-agent
       
